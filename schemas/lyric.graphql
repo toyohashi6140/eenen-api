@@ -1,0 +1,9 @@
+extend type Query {
+  FetchFakeLyric: Lyric!
+  FetchFakeLyrics: [Lyric!]!
+}
+
+type Lyric {
+  id: ID!
+  lyric: String!
+}
