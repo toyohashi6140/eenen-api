@@ -1,0 +1,22 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - schemas/*.graphql
+exec:
+  filename: ./infra/graphql/exec.go
+model:
+  filename: ./domain/models/graphql/model_gen.go
+resolver:
+  layout: follow-schema
+  dir: adapters/resolvers
+
+models:
+  ID: # graphql type
+    model:
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.IntID # go type
+  Date:
+    model: ./domain/models/graphql.Date
