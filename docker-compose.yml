@@ -1,0 +1,29 @@
+version: '3.7'
+
+x-service-default: &service
+  image: eenen-api
+  init: true
+  build:
+    context: ./
+    dockerfile: ./develop.Dockerfile
+  env_file:
+    - ./.env
+  networks:
+    - eenen-api-network
+  volumes:
+    - ./:/go/src/github.com/toyohashi6140/eenen-api/:delegated
+
+services:
+  eenen-api:
+    <<: *service
+    working_dir: /go/src/github.com/toyohashi6140/eenen-api
+    tty: true
+    command: air -c .air.toml
+    expose:
+      - '1323'
+    ports:
+      - '8880:1323'
+
+networks:
+  eenen-api-network:
+    external: true
