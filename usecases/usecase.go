@@ -4,6 +4,6 @@ import "context"
 
 type (
 	ManyReader[T any] interface {
-		FetchByKey(context.Context) (T, error)
+		FetchByKey(context.Context) ([]T, error)
 	}
 )
