@@ -3,3 +3,4 @@
 domain/models/graphql/model_gen.go
 infra/graphql/exec.go
 main
+air/
