@@ -2,3 +2,4 @@
 .air.toml
 domain/models/graphql/model_gen.go
 infra/graphql/exec.go
+main

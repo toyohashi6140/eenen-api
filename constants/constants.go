@@ -6,7 +6,8 @@ import (
 )
 
 const (
-	fakeLyricNumber int = 1
+	FakeLyricNumber int = 1
+	LyricNumber     int = 4
 )
 
 var (
@@ -57,5 +58,6 @@ var (
 		%s
 		このような⚪︎⚪︎ええねんという上記に類似する言葉を生成してください。
 		ただし、応答は「⚪︎⚪︎ええねん」という単語のみで、個数は%dつでお願いします。
-	`, strings.Join(EenenLyrics, "\n"), fakeLyricNumber)
+		また、例と同じものを生成してはいけません。
+	`, strings.Join(EenenLyrics, "\n"), FakeLyricNumber)
 )

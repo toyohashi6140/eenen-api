@@ -1,6 +1,5 @@
 extend type Query {
-  FetchFakeLyric: Lyric!
-  FetchFakeLyrics: [Lyric!]!
+  FetchLyrics: [Lyric!]!
 }
 
 type Lyric {

@@ -6,20 +6,14 @@ package resolvers
 
 import (
 	"context"
-	"fmt"
 
 	graphql1 "github.com/toyohashi6140/eenen-api/domain/models/graphql"
 	graphql2 "github.com/toyohashi6140/eenen-api/infra/graphql"
 )
 
-// FetchFakeLyric is the resolver for the FetchFakeLyric field.
-func (r *queryResolver) FetchFakeLyric(ctx context.Context) (*graphql1.Lyric, error) {
-	return r.LyricUsecase.FetchByKey(ctx)
-}
-
 // FetchFakeLyrics is the resolver for the FetchFakeLyrics field.
-func (r *queryResolver) FetchFakeLyrics(ctx context.Context) ([]*graphql1.Lyric, error) {
-	panic(fmt.Errorf("not implemented: FetchFakeLyric - FetchFakeLyrics"))
+func (r *queryResolver) FetchLyrics(ctx context.Context) ([]*graphql1.Lyric, error) {
+	return r.LyricUsecase.FetchByKey(ctx)
 }
 
 // Query returns graphql2.QueryResolver implementation.
